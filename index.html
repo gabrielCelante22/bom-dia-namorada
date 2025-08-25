@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surpresa pra Você 💛</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+  }
+  .container {
+    z-index: 1;
+    max-width: 90%;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease-in-out;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #ff6f91;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: fadeIn 4s ease-in-out;
+  }
+  button:hover {
+    background-color: #ff4c68;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  .heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 5s infinite;
+    opacity: 0.8;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg);}
+    100% { transform: translateY(-600px) rotate(360deg);}
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Bom dia, meu amor ❤️</h1>
+  <p>Queria te fazer sorrir hoje, cada dia contigo é especial e espero que essa mensagem te faça sentir meu carinho mesmo de longe.</p>
+  <button onclick="mostrarSurpresa()">Clique aqui pra uma surpresa 🎁</button>
+  <div id="surpresa" style="margin-top:20px; display:none;">
+    <p>Te amo demais! Mal posso esperar pra passar mais e mais momentos incríveis contigo. Obrigado por tudo! 😄❤️</p>
+    <img src="https://i.imgur.com/9y7K4xz.png" alt="Coração" style="width:100px; margin-top:10px;">
+  </div>
+</div>
+
+<script>
+function mostrarSurpresa() {
+  document.getElementById('surpresa').style.display = 'block';
+}
+
+// Criando corações flutuantes
+for(let i=0; i<20; i++){
+  let heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+  heart.innerHTML = '❤️';
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
